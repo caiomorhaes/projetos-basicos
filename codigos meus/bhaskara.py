@@ -1,9 +1,9 @@
 #tentar fazer uma calculadora de bhaskara interativa
 #introdução
-from debugpy.common.timestamp import reset
 
 print("Olá bem vindo a CALCULADORA DE BHASKARA AUTOMATICA")
 print("A seguir vou pedir o numero de suas 3 variaveis")
+import math 
 #while true para evitar do uso de letras
 while True:
 #variaveis da equação
@@ -30,13 +30,14 @@ if delta < 0:
 if delta == 0:
     print("                        ")
     # calculo das raizes
-    raiz2 = int((-B - delta ** 0.5) / (2 * A))
-    print('Para esse valor de delta só existe UMA raiz, nesse caso sendo: ', raiz2)
+    raiz2 = float((-B - math.sqrt(delta)) / (2 * A))
+    print(f'Para esse valor de delta só existe UMA raiz, nesse caso sendo:  {raiz2:.2f} ')
 #delta maior que 0 é o padrao com duas raizes
 if delta > 0:
     print("                        ")
     # calculo das raizes
-    raiz1 = int((-B + delta ** 0.5) / (2 * A))
-    raiz2 = int((-B - delta ** 0.5) / (2 * A))
-    print('Essas são as DUAS raizes reais desta operação:', raiz1, raiz2)
+    raiz1 = float((-B + math.sqrt(delta)) / (2 * A))
+    raiz2 = float((-B - math.sqrt(delta)) / (2 * A))
+    print (f'Essas são as DUAS raizes reais desta operação: {raiz1:.2f}, {raiz2:.2f} ')
 print('FIM DO SISTEMA')
+
